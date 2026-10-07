@@ -8,9 +8,6 @@
 </head>
 <body>
     
-</body>
-
-
 <div style="background-color:black;color:white;padding:20px;">
   <h1 style="text-align: center;">GDDS Esports Club</h1>
   <p style="text-align: center;">Welcome to the GDDS Esports Club!</p>
@@ -18,30 +15,24 @@
 </div>
 
 
-<div class="grid-container">
-  <div style="background-color:lightgray;padding:20px;">
-    <img src="images/fortnite.png" alt="Fortnite" style="width:10%;">
-    <p>100 players drop onto a shrinking island to search for weapons, build defensive structures, and fight until only one player or squad is left standing.</p>
-  </div>
-  <div style="background-color:lightgray;padding:20px;">
-    <img src="images/Super_Smash_Bros._Ultimate_logo.svg.webp" alt="Smash Bros Ultimate" style="width:10%;">
-    <p>Smash Bros Ultimate is a fighting game where players control iconic Nintendo characters and battle each other in various stages.</p>
-  </div>
-  <div style="background-color:lightgray;padding:20px;">
-    <img src="images/Logo_Marvel_Rivals.svg" alt="Overwatch 2" style="width: 10%;">
-    <p> 6v6 team-based third-person hero shooter where players battle using iconic Marvel Super Heroes and Super Villains.</p>
-  </div>
-  <div style="background-color:lightgray;padding:20px;">
-    <img src="images/logo-mk8.png" alt="Mariokart" style="width:10%;">
-    <p>Mariokart is a racing game where players race against each other in various environments.</p>
-  </div>
-  <div style="background-color:lightgray;padding:20px;">
-    <img src="images/Minecraft-Logo.png" alt="Minecraft" style="width:10%;">
-    <p>Minecraft is a game made up of blocks, creatures, and community. You can survive the night or build a work of art.</p>
-  </div>
-  <div style="background-color:lightgray;padding:20px;">
-    <img src="images/Apex-Legends-Logo-2019.png" alt="Apex Legends" style="width:10%;">
-    <p>Apex Legends is a battle royale game where players form squads of three and compete to be the last team standing.</p>
+<div class="marquee" aria-label="Featured games">
+  <div class="marquee-track">
+    <div class="marquee-group">
+      <img src="images/fortnite.png" alt="Fortnite">
+      <img src="images/Logo_Marvel_Rivals.svg" alt="Marvel Rivals">
+      <img src="images/Apex-Legends-Logo-2019.png" alt="Apex Legends">
+      <img src="images/Valorant-Logo.webp" alt="Valorant">
+      <img src="images/logo-mk8.png" alt="Mario Kart 8">
+      <img src="images/Minecraft-Logo.png" alt="Minecraft">
+    </div>
+    <div class="marquee-group" aria-hidden="true">
+      <img src="images/fortnite.png" alt="">
+      <img src="images/Logo_Marvel_Rivals.svg" alt="">
+      <img src="images/Apex-Legends-Logo-2019.png" alt="">
+      <img src="images/Valorant-Logo.webp" alt="">
+      <img src="images/logo-mk8.png" alt="">
+      <img src="images/Minecraft-Logo.png" alt="">
+    </div>
   </div>
 </div>
 
@@ -60,6 +51,43 @@ body {
   margin: 0;
 }
 
+.marquee {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 24s linear infinite;
+}
+
+.marquee-group {
+  display: flex;
+  align-items: center;
+  flex: none;
+  gap: 2vw;
+  padding-right: 2vw;
+}
+
+.marquee-group img {
+  display: block;
+  flex: none;
+  width: 10vw;
+}
+
+@keyframes marquee-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
 .tcg-ad {
   margin: 0;
   width: 100vw;
@@ -75,6 +103,7 @@ body {
 .grid-container {
   display: grid;
   column-gap: 5px;
+  grid-template-columns: 33.33% 33.33% 33.33%;
 }
 
 
@@ -107,6 +136,11 @@ body {
 
 
 </style>
+
+
+
+
+
 
 
 <div class="tcg-ad-container">
@@ -144,4 +178,5 @@ body {
 
 
 
+</body>
 </html>
